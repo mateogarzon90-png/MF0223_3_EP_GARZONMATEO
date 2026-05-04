@@ -1,0 +1,21 @@
+
+services:
+  srv_dev_XX:
+    image: ubuntu:22.04
+    container_name: srv_dev_XX
+    
+    stdin_open: true 
+    tty: true
+    volumes:
+      - datos_devXX:/var/empresa
+    networks:
+      - net_devXX
+    ports:
+      - "8090:3000"
+
+volumes:
+  datos_devXX:
+
+networks:
+  net_devXX:
+    driver: bridge
